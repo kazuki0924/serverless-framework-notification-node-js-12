@@ -1,10 +1,6 @@
-async function hello(event, context) {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: 'Hello from https://codingly.io' }),
-  };
+async function sendMail(event, context) {
+	console.log(event);
+	return event;
 }
 
-export const handler = hello;
-
-
+export const handler = sendMail;
