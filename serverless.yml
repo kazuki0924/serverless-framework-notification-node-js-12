@@ -1,5 +1,5 @@
 service:
-  name: serverless-framework-notification-node-js-12
+  name: sls-notification-node-js-12
 
 plugins:
   - serverless-bundle
@@ -11,6 +11,8 @@ provider:
   memorySize: 256
   region: us-east-1
   stage: ${opt:stage, 'dev'}
+  iamRoleStatements:
+    - ${file(iam/SendMailIAM.yml):SendMailIAM}
 
 functions:
   sendMail:
